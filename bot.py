@@ -4,7 +4,12 @@ import ccxt
 api_key = os.environ.get('DELTA_API_KEY')
 secret_key = os.environ.get('DELTA_SECRET_KEY')
 
-exchange = ccxt.delta({'apiKey': api_key, 'secret': secret_key})
+exchange = ccxt.delta({
+    'apiKey': api_key,
+    'secret': secret_key,
+    'enableRateLimit': True,
+})
+
 
 def run_bot():
     symbol = 'ETH/USDT'
